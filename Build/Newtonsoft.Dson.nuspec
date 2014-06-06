@@ -9,7 +9,7 @@
     <language>en-US</language>
     <projectUrl>https://github.com/JamesNK/Newtonsoft.Dson</projectUrl>
     <licenseUrl>https://raw.github.com/JamesNK/Newtonsoft.Dson/master/LICENSE.md</licenseUrl>
-    <tags>json glimpse</tags>
+    <tags>dson doge</tags>
     <dependencies>
       <dependency id="Newtonsoft.Json" version="6.0.3" />
     </dependencies>
