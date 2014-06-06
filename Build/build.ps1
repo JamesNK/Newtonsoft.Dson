@@ -1,7 +1,7 @@
 ﻿properties { 
-  $zipFileName = "Dson10r1.zip"
+  $zipFileName = "Dson10r2.zip"
   $majorVersion = "1.0"
-  $majorWithReleaseVersion = "1.0.1"
+  $majorWithReleaseVersion = "1.0.2"
   $version = GetVersion $majorWithReleaseVersion
   $signAssemblies = $false
   $signKeyPath = "D:\Development\Releases\newtonsoft.snk"
