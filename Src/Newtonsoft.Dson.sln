@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newtonsoft.Dson.Tests", "Newtonsoft.Dson.Tests\Newtonsoft.Dson.Tests.csproj", "{D6A21594-4109-40D4-B41A-25E290E045FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newtonsoft.Dson", "Newtonsoft.Dson\Newtonsoft.Dson.csproj", "{233353C2-37C9-4AD3-B26B-37783DEF237C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6A21594-4109-40D4-B41A-25E290E045FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6A21594-4109-40D4-B41A-25E290E045FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6A21594-4109-40D4-B41A-25E290E045FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6A21594-4109-40D4-B41A-25E290E045FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{233353C2-37C9-4AD3-B26B-37783DEF237C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{233353C2-37C9-4AD3-B26B-37783DEF237C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{233353C2-37C9-4AD3-B26B-37783DEF237C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{233353C2-37C9-4AD3-B26B-37783DEF237C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
