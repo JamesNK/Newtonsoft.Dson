@@ -169,7 +169,7 @@ namespace Newtonsoft.Dson
             base.WriteStartArray();
 
             EnsureSpace();
-            WriteInternal("many");
+            WriteInternal("so");
         }
 
         /// <summary>
@@ -233,7 +233,10 @@ namespace Newtonsoft.Dson
         protected override void WriteValueDelimiter()
         {
             base.WriteValueDelimiter();
-            WriteInternal(" next");
+            if (WriteState == WriteState.Array)
+                WriteInternal(" and");
+            else
+                WriteInternal(",");
         }
 
         #region WriteValue methods
@@ -244,7 +247,7 @@ namespace Newtonsoft.Dson
         {
             base.WriteNull();
             EnsureSpace();
-            WriteInternal("nullish");
+            WriteInternal("empty");
         }
 
         /// <summary>
@@ -281,7 +284,7 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(Convert.ToString(value));
+            WriteInternal(JsonConvert.ToString(value));
         }
 
         /// <summary>
@@ -293,7 +296,7 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(Convert.ToString(value));
+            WriteInternal(JsonConvert.ToString(value));
         }
 
         /// <summary>
@@ -304,7 +307,7 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(Convert.ToString(value));
+            WriteInternal(JsonConvert.ToString(value));
         }
 
         /// <summary>
@@ -316,7 +319,7 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(Convert.ToString(value));
+            WriteInternal(JsonConvert.ToString(value));
         }
 
         /// <summary>
@@ -327,7 +330,7 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(Convert.ToString(value));
+            WriteInternal(JsonConvert.ToString(value).Replace("E", "very"));
         }
 
         /// <summary>
@@ -338,7 +341,7 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(Convert.ToString(value));
+            WriteInternal(JsonConvert.ToString(value).Replace("E", "very"));
         }
 
         /// <summary>
@@ -349,7 +352,7 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(value ? "notfalse" : "nottrue");
+            WriteInternal(value ? "yes" : "no");
         }
 
         /// <summary>
@@ -360,7 +363,7 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(Convert.ToString(value));
+            WriteInternal(JsonConvert.ToString(value));
         }
 
         /// <summary>
@@ -372,7 +375,7 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(Convert.ToString(value));
+            WriteInternal(JsonConvert.ToString(value));
         }
 
         /// <summary>
@@ -383,7 +386,7 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(Convert.ToString(value));
+            WriteInternal(JsonConvert.ToString(value));
         }
 
         /// <summary>
@@ -394,7 +397,7 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(Convert.ToString(value));
+            WriteInternal(JsonConvert.ToString(value));
         }
 
         /// <summary>
@@ -406,7 +409,7 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(Convert.ToString(value));
+            WriteInternal(JsonConvert.ToString(value));
         }
 
         /// <summary>
@@ -417,7 +420,7 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(Convert.ToString(value));
+            WriteInternal(JsonConvert.ToString(value));
         }
 
         /// <summary>
@@ -428,10 +431,9 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(Convert.ToString(value));
+            WriteInternal(JsonConvert.ToString(value));
         }
 
-#if !NET20
         /// <summary>
         /// Writes a <see cref="DateTimeOffset"/> value.
         /// </summary>
@@ -440,9 +442,8 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(Convert.ToString(value));
+            WriteInternal(JsonConvert.ToString(value));
         }
-#endif
 
         /// <summary>
         /// Writes a <see cref="T:Byte[]"/> value.
@@ -452,7 +453,9 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(@"""" + Convert.ToBase64String(value) + @"""");
+            WriteInternal(@"""");
+            WriteInternal(Convert.ToBase64String(value));
+            WriteInternal(@"""");
         }
 
         /// <summary>
@@ -463,7 +466,7 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(Convert.ToString(value));
+            WriteInternal(JsonConvert.ToString(value));
         }
 
         /// <summary>
@@ -474,7 +477,7 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(Convert.ToString(value));
+            WriteInternal(JsonConvert.ToString(value));
         }
 
         /// <summary>
@@ -485,7 +488,7 @@ namespace Newtonsoft.Dson
         {
             base.WriteValue(value);
             EnsureSpace();
-            WriteInternal(Convert.ToString(value));
+            WriteInternal(JsonConvert.ToString(value));
         }
         #endregion
     }

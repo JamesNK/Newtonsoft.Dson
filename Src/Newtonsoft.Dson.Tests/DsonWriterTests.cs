@@ -48,11 +48,53 @@ wow", dson);
         }
 
         [Test]
+        public void SerializeFloat()
+        {
+            string dson = DsonConvert.SerializeObject(new { doubleValue = 99e19d, singleValue = 99e-19f }, Formatting.Indented);
+
+            Assert.AreEqual(@"such
+  ""doubleValue"" is 9.9very+20,
+  ""singleValue"" is 9.9very-18
+wow", dson);
+        }
+
+        [Test]
+        public void SerializeNull()
+        {
+            string dson = DsonConvert.SerializeObject(new { nullValue = (string)null }, Formatting.Indented);
+
+            Assert.AreEqual(@"such
+  ""nullValue"" is empty
+wow", dson);
+        }
+
+        [Test]
+        public void SerializeBool()
+        {
+            string dson = DsonConvert.SerializeObject(new { trueValue = true, falseValue = false }, Formatting.Indented);
+
+            Assert.AreEqual(@"such
+  ""trueValue"" is yes,
+  ""falseValue"" is no
+wow", dson);
+        }
+
+        [Test]
+        public void SerializeDate()
+        {
+            string dson = DsonConvert.SerializeObject(new { dateValue = new DateTime(2013, 11, 30) }, Formatting.Indented);
+
+            Assert.AreEqual(@"such
+  ""dateValue"" is ""2013-11-30T00:00:00""
+wow", dson);
+        }
+
+        [Test]
         public void SerializeArray()
         {
             string dson = DsonConvert.SerializeObject(new { hello = "world", people = new[] { "James", "Brendon", "Amy" } });
             
-            Assert.AreEqual(@"such ""hello"" is ""world"" next ""people"" is many ""James"" next ""Brendon"" next ""Amy"" many wow", dson);
+            Assert.AreEqual(@"such ""hello"" is ""world"", ""people"" is so ""James"" and ""Brendon"" and ""Amy"" many wow", dson);
         }
 
         [Test]
@@ -61,10 +103,10 @@ wow", dson);
             string dson = DsonConvert.SerializeObject(new { hello = "world", people = new[] { "James", "Brendon", "Amy" } }, Formatting.Indented);
 
             Assert.AreEqual(@"such
-  ""hello"" is ""world"" next
-  ""people"" is many
-    ""James"" next
-    ""Brendon"" next
+  ""hello"" is ""world"",
+  ""people"" is so
+    ""James"" and
+    ""Brendon"" and
     ""Amy""
   many
 wow", dson);
@@ -75,7 +117,7 @@ wow", dson);
         {
             string dson = DsonConvert.SerializeObject(new { hello = "world", people = Encoding.UTF8.GetBytes("how now brown cow") });
 
-            Assert.AreEqual(@"such ""hello"" is ""world"" next ""people"" is ""aG93IG5vdyBicm93biBjb3c="" wow", dson);
+            Assert.AreEqual(@"such ""hello"" is ""world"", ""people"" is ""aG93IG5vdyBicm93biBjb3c="" wow", dson);
         }
     }
 }

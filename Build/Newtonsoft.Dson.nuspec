@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Newtonsoft.Dson</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <title>Dson.NET</title>
     <description>DSON (Doge Serialized Object Notation): a data-interchange format that is easy for Shiba Inu dogs to read and write.</description>
     <authors>James Newton-King</authors>

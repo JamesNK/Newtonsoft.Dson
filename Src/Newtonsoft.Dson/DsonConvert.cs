@@ -34,6 +34,9 @@ using Newtonsoft.Json;
 
 namespace Newtonsoft.Dson
 {
+    /// <summary>
+    /// DSON (Doge Serialized Object Notation): a data-interchange format that is easy for Shiba Inu dogs to read and write.
+    /// </summary>
     public static class DsonConvert
     {
         #region Serialize
