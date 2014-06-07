@@ -230,6 +230,9 @@ namespace Newtonsoft.Dson
             }
         }
 
+        /// <summary>
+        /// Writes the DSON value delimiter.
+        /// </summary>
         protected override void WriteValueDelimiter()
         {
             base.WriteValueDelimiter();
